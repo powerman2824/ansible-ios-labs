@@ -10,11 +10,12 @@ These Ansible code snippets are meant as lab examples, and not for use in produc
 
 Requires Python 2.6 or higher, and Ansible
 Installing Ansible on Ubuntu:
+```
 $ sudo apt update
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
 $ sudo apt install ansible
-
+```
 ## Configuration
 
 If the code is configurable, describe it in detail, either here or in other documentation that you reference.
