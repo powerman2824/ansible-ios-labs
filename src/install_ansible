@@ -1,0 +1,9 @@
+# Use as an example of how to install Ansible on Ubuntu 
+# Reference Ansible Doc's for other installation methods
+# https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu
+
+# Installing Ansible on Ubuntu
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
