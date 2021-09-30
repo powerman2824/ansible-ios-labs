@@ -1,9 +1,7 @@
-# ansible-ios-labs
+# Ansible-IOS-Labs
 
 Ansible Code Snippets for IOS
 
-![add-image-here]()
- 
 ## Use Case Description
 
 These Ansible code snippets are meant as lab examples, and not for use in productions. 
