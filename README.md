@@ -4,7 +4,7 @@ Ansible Code Snippets for IOS
 
 ## Use Case Description
 
-These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not ## &  AND NOT - for use in productions. 
+These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not <bold>&  AND NOT</bold> - for use in productions. 
 
 ## Installation
 
