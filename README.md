@@ -4,59 +4,88 @@ Ansible Code Snippets for IOS
 
 ## Use Case Description
 
-These Ansible code snippets are meant as lab examples, and not for use in productions. 
+These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not & #AND NOT - for use in productions. 
 
 ## Installation
 
 Requires Python 2.6 or higher, and Ansible
 Installing Ansible on Ubuntu:
-```
+- Use as an example of how to install Ansible on Ubuntu 
+- Reference Ansible Doc's for other installation methods: ```https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu```
+
+```bash
 $ sudo apt update
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
 $ sudo apt install ansible
 ```
+
 ## Configuration
 
-If the code is configurable, describe it in detail, either here or in other documentation that you reference.
-The provided host fi
+- Example ansible.cfg file
+- Use these configs as a starting point to help you troubleshoot
+- Reference Ansible Doc's Network Troubleshooting for more info: ```https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#error-authentication-failed```
 
-## Usage
+```bash
+# Error: “Authentication failed”
+[paramiko_connection]
+look_for_keys = False
 
-Show users how to use the code. Be specific.
-Use appropriate formatting when showing code snippets or command line output.
+# Error: “connecting to host <hostname> returned an error” or “Bad address”
+[paramiko_connection]
+host_key_auto_add = True
 
-### DevNet Sandbox
+# Timeout issues
+[persistent_connection]
+connect_timeout = 60
 
-A great way to make your repo easy for others to use is to provide a link to a [DevNet Sandbox](https://developer.cisco.com/site/sandbox/) that provides a network or other resources required to use this code. In addition to identifying an appropriate sandbox, be sure to provide instructions and any configuration necessary to run your code with the sandbox.
+# Command timeout
+[persistent_connection]
+command_timeout = 60
+```
 
-## How to test the software
+## Use this to help you troubleshoot ssh connections issues
 
-Provide details on steps to test, versions of components/dependencies against which code was tested, date the code was last tested, etc. 
-If the repo includes automated tests, detail how to run those tests.
-If the repo is instrumented with a continuous testing framework, that is even better.
+- Common issue occurs with the Diffie–Hellman key exchange
+- View the wiki: ```https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange```
+- Also reference Cicso Community Security Doc's for more infomation on issue and how to resolve: ```https://community.cisco.com/t5/security-documents/guide-to-better-ssh-security/ta-p/3133344```
 
+## Add these to your ssh_config file located ```~/etc/ssh/ssh_config```:
 
-## Known issues
+```bash
+KexAlgorithms=curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+```
 
-Document any significant shortcomings with the code. If using [GitHub Issues](https://help.github.com/en/articles/about-issues) to track issues, make that known and provide any templates or conventions to be followed when opening a new issue. 
+## Example hosts file
 
-## Getting help
+```bash
+192.168.1.1 ansible_connection=local ansible_user=admin ansible_password=cisco
+192.168.1.2 ansible_connection=local ansible_user=admin ansible_password=cisco
+192.168.1.3 ansible_connection=local ansible_user=admin ansible_password=cisco
 
-Instruct users how to get help with this code; this might include links to an issues list, wiki, mailing list, etc.
+[R1]
+192.168.1.1
 
-**Example**
+[R2]
+192.168.1.2
 
-If you have questions, concerns, bug reports, etc., please create an issue against this repository.
+[SW1]
+192.168.1.3
 
-## Getting involved
+[routers]
+192.168.1.1
+192.168.1.2
 
-This section should detail why people should get involved and describe key areas you are currently focusing on; e.g., trying to get feedback on features, fixing certain bugs, building important pieces, etc. Include information on how to setup a development environment if different from general installation instructions.
+[switches]
+192.168.1.3
 
-General instructions on _how_ to contribute should be stated with a link to [CONTRIBUTING](./CONTRIBUTING.md) file.
+[all]
+192.168.1.1
+192.168.1.2
+192.168.1.3
+```
 
-## Author(s)
+## DevNet Sandbox
 
-This project was written and is maintained by the following individuals:
-
-* Joseph Cafarelli <mr.caf2824@gmail.com>
+A great way to learn more and check out: [DevNet Sandbox](https://developer.cisco.com/site/sandbox/)
