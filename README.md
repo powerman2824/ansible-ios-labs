@@ -26,6 +26,8 @@ $ sudo apt install ansible
 - Use these configs as a starting point to help you troubleshoot
 - Reference Ansible Doc's Network Troubleshooting for more info: ```https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#error-authentication-failed```
 
+## Add these to your ssh_config file located ```~/etc/ansible/ansible.conf```:
+
 ```bash
 # Error: “Authentication failed”
 [paramiko_connection]
@@ -57,7 +59,7 @@ KexAlgorithms=curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384
 Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
 ```
 
-## Example hosts file
+## Example hosts file ```host.conf```:
 
 ```bash
 192.168.1.1 ansible_connection=local ansible_user=admin ansible_password=cisco
