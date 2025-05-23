@@ -4,7 +4,7 @@ Ansible Code Snippets for IOS
 
 ## Use Case Description
 
-These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not & #AND NOT - for use in productions. 
+These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not ## &  AND NOT - for use in productions. 
 
 ## Installation
 
@@ -90,4 +90,4 @@ Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
 
 ## DevNet Sandbox
 
-A great way to learn more and check out: [DevNet Sandbox](https://developer.cisco.com/site/sandbox/)
+A great way to learn more, check out: [DevNet Sandbox](https://developer.cisco.com/site/sandbox/)
