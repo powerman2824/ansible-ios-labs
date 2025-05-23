@@ -2,7 +2,7 @@
 
 Ansible Code Snippets for IOS
 
-## Use Case Description
+## Lab Description
 
 These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not **&  AND NOT** - for use in productions. 
 
@@ -22,7 +22,7 @@ $ sudo apt install ansible
 
 ## Configuration
 
-- Example ansible.cfg file
+- Example ansible.conf file
 - Use these configs as a starting point to help you troubleshoot
 - Reference Ansible Doc's Network Troubleshooting for more info: ```https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#error-authentication-failed```
 
