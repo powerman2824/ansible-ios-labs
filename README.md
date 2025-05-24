@@ -1,5 +1,7 @@
 # Ansible-IOS-Labs
 
+[Watch the setup video on YouTube](https://www.youtube.com/live/t3Zvs24ciQo))
+
 Ansible Code Snippets for IOS
 
 ## Lab Description
