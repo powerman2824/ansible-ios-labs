@@ -1,12 +1,12 @@
 # Ansible-IOS-Labs
 
-[Watch the setup video on YouTube](https://www.youtube.com/live/t3Zvs24ciQo))
-
 Ansible Code Snippets for IOS
 
 ## Lab Description
 
 These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not **&  AND NOT** - for use in productions. 
+
+[Watch this live stream setup](https://www.youtube.com/live/t3Zvs24ciQo)
 
 ## Installation
 
