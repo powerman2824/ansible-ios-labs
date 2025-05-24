@@ -6,13 +6,9 @@ Ansible Code Snippets for IOS
 
 These Ansible code snippets are meant as lab examples using Cisco based equipmet, and not **&  AND NOT** - for use in productions. 
 
----
-
 ## Watch the Lab Live Stream
 
 [![Watch this live stream setup](ansible-funny-thumb-3.png)](https://www.youtube.com/live/t3Zvs24ciQo)
-
----
 
 ## Installation
 
